@@ -2,32 +2,133 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <title>個人ブログ</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>天才チキンの私生活</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+JP:wght@900&family=Space+Grotesk:wght@700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        body {
+            font-family: 'Black Han Sans', 'Space Grotesk', 'Noto Sans JP', sans-serif;
+            background-color: #ffffff; 
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        .shark-bg {
+            position: absolute;
+            font-size: 140px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+            opacity: 0.15;
+            filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.05));
+        }
+        .s1 { top: 5%; left: 3%; transform: rotate(20deg); }
+        .s2 { top: 8%; right: 3%; transform: rotate(-25deg) scaleX(-1); }
+        .s3 { bottom: 10%; left: 5%; transform: rotate(-15deg); }
+        .s4 { bottom: 5%; right: 5%; transform: rotate(30deg) scaleX(-1); }
+
+        .container {
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            z-index: 10;
+        }
+
+        .site-header { margin-bottom: 40px; }
+
+        /* 👑 タイトル：clamp()で画面幅に合わせて伸縮し、一行に絶対収まる設定 */
+        .site-logo {
+            font-size: clamp(1.5rem, 8vw, 4rem);
+            font-weight: 900;
+            color: #1a1a1a;
+            white-space: nowrap; /* ★ここで一行に強制固定 */
+            line-height: 1; 
+            text-transform: uppercase;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            margin: 0 auto 40px auto; 
+        }
+
+        .menu-card {
+            background-color: #ffffff;
+            padding: 25px 20px;
+            text-decoration: none;
+            color: #1a1a1a;
+            border: 6px solid #1a1a1a; 
+            box-shadow: 10px 10px 0px #1a1a1a; 
+            transition: all 0.15s ease-in-out;
+            display: block;
+        }
+
+        .menu-card:hover {
+            transform: translate(5px, 5px);
+            box-shadow: 5px 5px 0px #1a1a1a;
+            background-color: #f8f9fa;
+        }
+
+        .menu-card.disabled { opacity: 0.6; cursor: not-allowed; }
+        .menu-card.disabled:hover { transform: none; box-shadow: 10px 10px 0px #1a1a1a; background-color: #ffffff; }
+
+        .menu-title { font-size: 1.5rem; font-weight: 900; display: block; }
+        .coming-soon-text { font-family: 'Syncopate', sans-serif; font-size: 0.6rem; color: #ff4757; display: block; margin-top: 4px; font-weight: 700; }
+
+        .sns-section { margin-top: 20px; }
+        .instagram-btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            background-color: #1a1a1a; color: #ffffff; text-decoration: none;
+            font-family: 'Syncopate', sans-serif; font-size: 1rem; font-weight: 700;
+            padding: 15px 40px; border: 5px solid #1a1a1a;
+            box-shadow: 8px 8px 0px #ff4757; transition: all 0.15s ease;
+        }
+        .instagram-btn:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px #ff4757; background-color: #ff4757; }
+    </style>
 </head>
 <body>
 
-    <h1>ryoma's Personal Blogへようこそ！</h1>
-    <p>これから個人的なブログを始めていきます。まずは自己紹介を兼ねて、10個の紹介文を載せます！</p>
+    <div class="shark-bg s1">🦈</div>
+    <div class="shark-bg s2">🦈</div>
+    <div class="shark-bg s3">🦈</div>
+    <div class="shark-bg s4">🦈</div>
 
+    <div class="container">
+        <div class="site-header">
+            <div class="site-logo">天才チキンの私生活</div>
+        </div>
 
-    <hr> <img src="photo/meet.jpg" alt="meet.jpg" width="400">
+        <div class="menu-grid">
+            <a href="profile.html" class="menu-card"><span class="menu-title">自己紹介</span></a>
+            <a href="#" class="menu-card" onclick="alert('作成中．ちょい待ち')"><span class="menu-title">投稿</span></a>
+            <div class="menu-card disabled"><span class="menu-title">秘密の部屋</span><span class="coming-soon-text">COMING SOON</span></div>
+            <div class="menu-card disabled"><span class="menu-title">写真ギャラリー</span><span class="coming-soon-text">COMING SOON</span></div>
+        </div>
 
-    <hr>
-
-    <h2>✨ わたしを知るための10のコト</h2>
-    
-    <ol>
-        <li>ここに1つ目の紹介文を書くよ（例：趣味はプログラミングの勉強です！）</li>
-        <li>ここに2つ目の紹介文を書くよ</li>
-        <li>ここに3つ目の紹介文を書くよ</li>
-        <li>ここに4つ目の紹介文を書くよ</li>
-        <li>ここに5つ目の紹介文を書くよ</li>
-        <li>ここに6つ目の紹介文を書くよ</li>
-        <li>ここに7つ目の紹介文を書くよ</li>
-        <li>ここに8つ目の紹介文を書くよ</li>
-        <li>ここに9つ目の紹介文を書くよ</li>
-        <li>ここに10つ目の紹介文を書くよ</li>
-    </ol>
-
+        <div class="sns-section">
+            <a href="https://www.instagram.com/tensaichicken2004/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+                <i class="fa-brands fa-instagram"></i> INSTAGRAM
+            </a>
+        </div>
+    </div>
 </body>
 </html>

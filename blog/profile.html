@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT | 天才チキンの私生活</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;700&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
+            background-color: #ffffff; /* 白背景 */
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            line-height: 1.8;
+            position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* 🦈 背景のサメ（イラスト絵文字をちりばめ） */
+        .shark-bg {
+            position: absolute;
+            font-size: 120px;
+            pointer-events: none;
+            user-select: none;
+            z-index: 1;
+            opacity: 0.15; /* 白背景に溶け込む薄さ */
+            filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.05));
+        }
+
+        .s1 { top: 5%; left: 3%; transform: rotate(15deg); }
+        .s2 { top: 22%; right: 5%; transform: rotate(-30deg) scaleX(-1); }
+        .s3 { top: 45%; left: -2%; transform: rotate(-10deg); }
+        .s4 { top: 65%; right: 2%; transform: rotate(25deg); }
+        .s5 { bottom: 8%; left: 8%; transform: rotate(40deg); }
+        .s6 { bottom: 2%; right: 12%; transform: rotate(-15deg) scaleX(-1); }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* 🏠 INDEXに戻るリンク */
+        .back-link {
+            display: inline-block;
+            text-decoration: none;
+            color: #1a1a1a;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 4px;
+            transition: all 0.3s;
+            margin-bottom: 50px;
+        }
+        .back-link:hover {
+            color: #ff4757;
+            border-color: #ff4757;
+        }
+
+        /* 👑 メインセクション */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        /* 🐔 びっくりチキン（chicken_2.webp）をハメ込む枠 */
+        .chicken-image-box {
+            width: 100%;
+            height: 480px;
+            background-color: #ffffff;
+            border: 6px solid #1a1a1a;
+            box-shadow: 15px 15px 0px #1a1a1a;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .chicken-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* チキンが切れないように綺麗に収める */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        /* 名前タイトル */
+        .main-title {
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 30px 0; /* 下の余白を少し広げてスッキリ */
+            color: #1a1a1a;
+        }
+
+        .bio-text {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            margin-bottom: 45px;
+            font-weight: 500;
+        }
+
+        /* 📊 カスタムスペック表示 */
+        .specs {
+            border-top: 2px solid #1a1a1a;
+            padding-top: 25px;
+        }
+        .spec-item {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .spec-label {
+            font-weight: 700;
+            width: 140px;
+            color: #8a8a8a;
+            letter-spacing: 2px;
+        }
+        .spec-value {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* 🎬 動画セクション */
+        .video-section {
+            margin-top: 100px;
+            border-top: 2px solid #1a1a1a;
+            padding-top: 80px;
+        }
+
+        .section-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            letter-spacing: 6px;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            background-color: #000000;
+            border: 6px solid #1a1a1a;
+            box-shadow: 15px 15px 0px #1a1a1a;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .chicken-image-box {
+                height: 380px;
+            }
+            .main-title {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 🦈 背景にちりばめられたサメたち -->
+    <div class="shark-bg s1">🦈</div>
+    <div class="shark-bg s2">🦈</div>
+    <div class="shark-bg s3">🦈</div>
+    <div class="shark-bg s4">🦈</div>
+    <div class="shark-bg s5">🦈</div>
+    <div class="shark-bg s6">🦈</div>
+
+    <div class="wrapper">
+        
+        <a href="index.html" class="back-link">// RETURN TO INDEX</a>
+
+        <section class="hero-section">
+            
+            <!-- 🐔 送ってくれた最高なチキンの画像を読み込む枠にしました！ -->
+            <div class="chicken-image-box">
+                <img src="chicken.webp" alt="天才チキン">
+            </div>
+            
+            <div class="hero-text">
+                <!-- 名前を「天才チキン」に変更！ -->
+                <h1 class="main-title">天才チキン</h1>
+                
+                <p class="bio-text">
+                  天才チキンのホームページへようこそ<br>
+                  このホームページでは，チキンの私生活や活動，日記を更新していきます．<br>
+                  現在，ホームページ作成途中です．随時更新いたします．
+                </p>
+
+                <!-- 📊 項目をご要望通りにリニューアル！ -->
+                <div class="specs">
+                    <div class="spec-item">
+                        <span class="spec-label">年齢</span>
+                        <span class="spec-value">22歳</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">趣味</span>
+                        <span class="spec-value">映画，運動，ご飯食べる事</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">好きな映画</span>
+                        <span class="spec-value">南極料理人</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">好きな食べ物</span>
+                        <span class="spec-value">肉</span>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- 🎬 動画エリア -->
+        <section class="video-section">
+            <div class="section-title">// さみしいので，解析したものを載せときます</div>
+            
+            <div class="video-container">
+                <video src="movie.mp4" controls autoplay muted loop playsinline></video>
+            </div>
+        </section>
+
+    </div>
+
+</body>
+</html>
