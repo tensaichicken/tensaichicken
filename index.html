@@ -53,11 +53,12 @@
 
         .site-header { margin-bottom: 40px; }
 
+        /* 👑 タイトル：clamp()で画面幅に合わせて伸縮し、一行に絶対収まる設定 */
         .site-logo {
             font-size: clamp(1.5rem, 8vw, 4rem);
             font-weight: 900;
             color: #1a1a1a;
-            white-space: nowrap;
+            white-space: nowrap; /* ★ここで一行に強制固定 */
             line-height: 1; 
             text-transform: uppercase;
         }
@@ -102,32 +103,6 @@
             box-shadow: 8px 8px 0px #ff4757; transition: all 0.15s ease;
         }
         .instagram-btn:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px #ff4757; background-color: #ff4757; }
-
-        .official-footer-tag {
-            position: fixed;
-            bottom: 25px;         
-            right: 30px;          
-            font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.75rem;   
-            font-weight: 900;     
-            letter-spacing: 4px;  
-            color: #1a1a1a;
-            z-index: 100;         
-            background-color: #ffffff; 
-            padding: 4px 8px;     
-            border: 2px solid #1a1a1a; 
-            user-select: none;
-            pointer-events: none;
-        }
-
-        @media (max-width: 768px) {
-            .official-footer-tag {
-                font-size: 0.65rem; 
-                bottom: 15px;
-                right: 15px;
-                letter-spacing: 2px;
-            }
-        }
     </style>
 </head>
 <body>
@@ -137,8 +112,6 @@
     <div class="shark-bg s3">🦈</div>
     <div class="shark-bg s4">🦈</div>
 
-    <div class="official-footer-tag">天才チキンのホームページ</div>
-
     <div class="container">
         <div class="site-header">
             <div class="site-logo">天才チキンの私生活</div>
@@ -146,13 +119,13 @@
 
         <div class="menu-grid">
             <a href="profile.html" class="menu-card"><span class="menu-title">自己紹介</span></a>
-            <a href="#" class="menu-card" onclick="alert('作成中．ちょい待ち')"><span class="menu-title">投稿</span></a>
+            <a href="#" class="menu-card" onclick="alert('ただいま執筆中！')"><span class="menu-title">最新の投稿</span></a>
             <div class="menu-card disabled"><span class="menu-title">秘密の部屋</span><span class="coming-soon-text">COMING SOON</span></div>
             <div class="menu-card disabled"><span class="menu-title">写真ギャラリー</span><span class="coming-soon-text">COMING SOON</span></div>
         </div>
 
         <div class="sns-section">
-            <a href="https://www.instagram.com/tensaichicken2004/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
+            <a href="https://www.instagram.com/あなたのユーザー名/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
                 <i class="fa-brands fa-instagram"></i> INSTAGRAM
             </a>
         </div>
