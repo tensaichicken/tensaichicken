@@ -3,131 +3,199 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>天才チキンの私生活</title>
+    <title>ABOUT | 天才チキンの私生活</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+JP:wght@900&family=Space+Grotesk:wght@700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Space+Grotesk:wght@400;700&family=Noto+Sans+JP:wght@700&display=swap" rel="stylesheet">
 
     <style>
         body {
-            font-family: 'Black Han Sans', 'Space Grotesk', 'Noto Sans JP', sans-serif;
-            background-color: #ffffff; 
+            font-family: 'Space Grotesk', 'Noto Sans JP', sans-serif;
+            background-color: #ffffff; /* 白背景 */
             color: #1a1a1a;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            overflow-x: hidden;
+            line-height: 1.8;
             position: relative;
+            overflow-x: hidden;
+            min-height: 100vh;
         }
 
+        /* 🦈 背景のサメ（イラスト絵文字をちりばめ） */
         .shark-bg {
             position: absolute;
-            font-size: 140px;
+            font-size: 120px;
             pointer-events: none;
             user-select: none;
             z-index: 1;
-            opacity: 0.15;
+            opacity: 0.15; /* 白背景に溶け込む薄さ */
             filter: drop-shadow(5px 5px 0px rgba(0,0,0,0.05));
         }
-        .s1 { top: 5%; left: 3%; transform: rotate(20deg); }
-        .s2 { top: 8%; right: 3%; transform: rotate(-25deg) scaleX(-1); }
-        .s3 { bottom: 10%; left: 5%; transform: rotate(-15deg); }
-        .s4 { bottom: 5%; right: 5%; transform: rotate(30deg) scaleX(-1); }
 
-        .container {
-            max-width: 500px;
-            width: 90%;
-            text-align: center;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
+        .s1 { top: 5%; left: 3%; transform: rotate(15deg); }
+        .s2 { top: 22%; right: 5%; transform: rotate(-30deg) scaleX(-1); }
+        .s3 { top: 45%; left: -2%; transform: rotate(-10deg); }
+        .s4 { top: 65%; right: 2%; transform: rotate(25deg); }
+        .s5 { bottom: 8%; left: 8%; transform: rotate(40deg); }
+        .s6 { bottom: 2%; right: 12%; transform: rotate(-15deg) scaleX(-1); }
+
+        .wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
             position: relative;
             z-index: 10;
         }
 
-        .site-header { margin-bottom: 40px; }
-
-        /* 👑 タイトル：clamp()で画面幅に合わせて伸縮し、一行に絶対収まる設定 */
-        .site-logo {
-            font-size: clamp(1.5rem, 8vw, 4rem);
-            font-weight: 900;
-            color: #1a1a1a;
-            white-space: nowrap; /* ★ここで一行に強制固定 */
-            line-height: 1; 
-            text-transform: uppercase;
-        }
-
-        .menu-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 100%;
-            margin: 0 auto 40px auto; 
-        }
-
-        .menu-card {
-            background-color: #ffffff;
-            padding: 25px 20px;
+        /* 🏠 INDEXに戻るリンク */
+        .back-link {
+            display: inline-block;
             text-decoration: none;
             color: #1a1a1a;
-            border: 6px solid #1a1a1a; 
-            box-shadow: 10px 10px 0px #1a1a1a; 
-            transition: all 0.15s ease-in-out;
-            display: block;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            border-bottom: 2px solid #1a1a1a;
+            padding-bottom: 4px;
+            transition: all 0.3s;
+            margin-bottom: 50px;
+        }
+        .back-link:hover {
+            color: #ff4757;
+            border-color: #ff4757;
         }
 
-        .menu-card:hover {
-            transform: translate(5px, 5px);
-            box-shadow: 5px 5px 0px #1a1a1a;
-            background-color: #f8f9fa;
+        /* 👑 メインセクション */
+        .hero-section {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: center;
+            margin-bottom: 100px;
         }
 
-        .menu-card.disabled { opacity: 0.6; cursor: not-allowed; }
-        .menu-card.disabled:hover { transform: none; box-shadow: 10px 10px 0px #1a1a1a; background-color: #ffffff; }
-
-        .menu-title { font-size: 1.5rem; font-weight: 900; display: block; }
-        .coming-soon-text { font-family: 'Syncopate', sans-serif; font-size: 0.6rem; color: #ff4757; display: block; margin-top: 4px; font-weight: 700; }
-
-        .sns-section { margin-top: 20px; }
-        .instagram-btn {
-            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
-            background-color: #1a1a1a; color: #ffffff; text-decoration: none;
-            font-family: 'Syncopate', sans-serif; font-size: 1rem; font-weight: 700;
-            padding: 15px 40px; border: 5px solid #1a1a1a;
-            box-shadow: 8px 8px 0px #ff4757; transition: all 0.15s ease;
+        /* 🐔 びっくりチキン（chicken.webp）をハメ込む枠 */
+        .chicken-image-box {
+            width: 100%;
+            height: 480px;
+            background-color: #ffffff;
+            border: 6px solid #1a1a1a;
+            box-shadow: 15px 15px 0px #1a1a1a;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
-        .instagram-btn:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px #ff4757; background-color: #ff4757; }
+        .chicken-image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* チキンが切れないように綺麗に収める */
+            padding: 20px;
+            box-sizing: border-box;
+        }
 
-        /* 📍 右下に「公式感」のある文字を表示するスタイル */
-        .official-footer-tag {
-            position: fixed;
-            bottom: 25px;         /* 画面下からの距離 */
-            right: 30px;          /* 画面右からの距離 */
+        /* 名前タイトル */
+        .main-title {
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.75rem;   /* あえて小さめにすることで公式感がUP */
-            font-weight: 900;     /* ガツンと太く */
-            letter-spacing: 4px;  /* 文字の間隔を広げてスタイリッシュに */
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin: 0 0 30px 0; /* 下の余白を少し広げてスッキリ */
             color: #1a1a1a;
-            z-index: 100;         /* 一番手前に固定 */
-            background-color: #ffffff; /* 文字の後ろの背景（サメと被っても読めるように） */
-            padding: 4px 8px;     /* 文字の周りの余白 */
-            border: 2px solid #1a1a1a; /* 細めの黒枠で囲ってカッチリ感をプラス */
-            user-select: none;
-            pointer-events: none;
+        }
+
+        .bio-text {
+            font-size: 0.95rem;
+            color: #4a4a4a;
+            margin-bottom: 45px;
+            font-weight: 500;
+        }
+
+        /* 📊 カスタムスペック表示 */
+        .specs {
+            border-top: 2px solid #1a1a1a;
+            padding-top: 25px;
+        }
+        .spec-item {
+            display: flex;
+            margin-bottom: 15px;
+            font-size: 0.9rem;
+        }
+        .spec-label {
+            font-weight: 700;
+            width: 140px;
+            color: #8a8a8a;
+            letter-spacing: 2px;
+        }
+        .spec-value {
+            font-weight: 700;
+            color: #1a1a1a;
+        }
+
+        /* ✍️ ご挨拶セクション */
+        .greeting-section {
+            margin-top: 100px;
+            border-top: 2px solid #1a1a1a;
+            padding-top: 80px;
+        }
+
+        .greeting-text {
+            font-size: 1rem;
+            color: #1a1a1a;
+            font-weight: 500;
+            background-color: #f8f9fa; /* ほんのり薄いグレーの背景で読みやすく */
+            padding: 30px;
+            border-left: 6px solid #1a1a1a; /* クールなアクセント線 */
+            box-shadow: 8px 8px 0px rgba(0,0,0,0.05);
+            
+            /* 👇 ここに自動改行の魔法を追加したよ！ */
+            white-space: pre-wrap;
+        }
+
+        /* 🎬 動画セクション */
+        .video-section {
+            margin-top: 100px;
+            border-top: 2px solid #1a1a1a;
+            padding-top: 80px;
+        }
+
+        .section-title {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.5rem;
+            color: #1a1a1a;
+            letter-spacing: 6px;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%;
+            background-color: #000000;
+            border: 6px solid #1a1a1a;
+            box-shadow: 15px 15px 0px #1a1a1a;
+        }
+
+        .video-container video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         @media (max-width: 768px) {
-            .official-footer-tag {
-                font-size: 0.65rem; /* スマホでは一回り小さくしてスッキリ */
-                bottom: 15px;
-                right: 15px;
-                letter-spacing: 2px;
+            .hero-section {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+            .chicken-image-box {
+                height: 380px;
+            }
+            .main-title {
+                font-size: 2.5rem;
             }
         }
     </style>
@@ -138,26 +206,76 @@
     <div class="shark-bg s2">🦈</div>
     <div class="shark-bg s3">🦈</div>
     <div class="shark-bg s4">🦈</div>
+    <div class="shark-bg s5">🦈</div>
+    <div class="shark-bg s6">🦈</div>
 
-    <div class="official-footer-tag">天才チキンのホームページ</div>
+    <div class="wrapper">
+        
+        <a href="index.html" class="back-link">// RETURN TO INDEX</a>
 
-    <div class="container">
-        <div class="site-header">
-            <div class="site-logo">天才チキンの私生活</div>
-        </div>
+        <section class="hero-section">
+            
+            <div class="chicken-image-box">
+                <img src="chicken.webp" alt="天才チキン">
+            </div>
+            
+            <div class="hero-text">
+                <h1 class="main-title">天才チキン</h1>
+                
+                <p class="bio-text">
+                  天才チキンのホームページへようこそ!!<br>
+                  ここでは，チキンの私生活や活動，日記を更新していきます．<br>
+                  現在，ホームページ作成途中です．随時更新いたします．
+                </p>
 
-        <div class="menu-grid">
-            <a href="profile.html" class="menu-card"><span class="menu-title">自己紹介</span></a>
-            <a href="#" class="menu-card" onclick="alert('作成中．ちょい待ち')"><span class="menu-title">投稿</span></a>
-            <div class="menu-card disabled"><span class="menu-title">秘密の部屋</span><span class="coming-soon-text">COMING SOON</span></div>
-            <div class="menu-card disabled"><span class="menu-title">写真ギャラリー</span><span class="coming-soon-text">COMING SOON</span></div>
-        </div>
+                <div class="specs">
+                    <div class="spec-item">
+                        <span class="spec-label">年齢</span>
+                        <span class="spec-value">20代前半</span>
+                    </div>
+                     <div class="spec-item">
+                        <span class="spec-label">身分</span>
+                        <span class="spec-value">地方国立大学工学部(特待生)</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">趣味</span>
+                        <span class="spec-value">映画，運動，ご飯食べる事</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">好きな映画</span>
+                        <span class="spec-value">南極料理人</span>
+                    </div>
+                    <div class="spec-item">
+                        <span class="spec-label">好きな食べ物</span>
+                        <span class="spec-value">肉</span>
+                    </div>
+                     <div class="spec-item">
+                        <span class="spec-label">座右の銘</span>
+                        <span class="spec-value">一日ひとつだけ、強くなる</span>
+                    </div>
+                </div>
+            </div>
 
-        <div class="sns-section">
-            <a href="https://www.instagram.com/tensaichicken2004/" target="_blank" rel="noopener noreferrer" class="instagram-btn">
-                <i class="fa-brands fa-instagram"></i> INSTAGRAM
-            </a>
-        </div>
+        </section>
+
+        <section class="greeting-section">
+            <div class="section-title"> ご挨拶</div>
+            <div class="greeting-text">この度，ホームページを開設いたしました．日記をつけていく予定です．
+
+ホームページ開設の経緯を説明させていただきます．新しくSNSをしようと思い立ち，優しいSNSで人気のGRAVITYを始めましたが，出会い系の温床になっており，芳しくなかったため即日削除いたしました．
+また，ビーリアルを今から始めるのは遅い気がしたため，ホームページを立ち上げることにしました．
+詳しい自己紹介に関しては，初回投稿にてする予定です．不定期ですが更新を続ける予定でいますので，遊びに来ていただけると嬉しいです．</div>
+        </section>
+
+        <section class="video-section">
+            <div class="section-title">// さみしいので，解析したものを載せときます</div>
+            
+            <div class="video-container">
+                <video src="movie.mp4" controls autoplay muted loop playsinline></video>
+            </div>
+        </section>
+
     </div>
+
 </body>
 </html>
