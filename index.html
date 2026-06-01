@@ -103,6 +103,33 @@
             box-shadow: 8px 8px 0px #ff4757; transition: all 0.15s ease;
         }
         .instagram-btn:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px #ff4757; background-color: #ff4757; }
+
+        /* 📍 右下に「公式感」のある文字を表示するスタイル */
+        .official-footer-tag {
+            position: fixed;
+            bottom: 25px;         /* 画面下からの距離 */
+            right: 30px;          /* 画面右からの距離 */
+            font-family: 'Noto Sans JP', sans-serif;
+            font-size: 0.75rem;   /* あえて小さめにすることで公式感がUP */
+            font-weight: 900;     /* ガツンと太く */
+            letter-spacing: 4px;  /* 文字の間隔を広げてスタイリッシュに */
+            color: #1a1a1a;
+            z-index: 100;         /* 一番手前に固定 */
+            background-color: #ffffff; /* 文字の後ろの背景（サメと被っても読めるように） */
+            padding: 4px 8px;     /* 文字の周りの余白 */
+            border: 2px solid #1a1a1a; /* 細めの黒枠で囲ってカッチリ感をプラス */
+            user-select: none;
+            pointer-events: none;
+        }
+
+        @media (max-width: 768px) {
+            .official-footer-tag {
+                font-size: 0.65rem; /* スマホでは一回り小さくしてスッキリ */
+                bottom: 15px;
+                right: 15px;
+                letter-spacing: 2px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -111,6 +138,8 @@
     <div class="shark-bg s2">🦈</div>
     <div class="shark-bg s3">🦈</div>
     <div class="shark-bg s4">🦈</div>
+
+    <div class="official-footer-tag">天才チキンのホームページ</div>
 
     <div class="container">
         <div class="site-header">
