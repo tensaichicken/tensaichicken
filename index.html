@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Noto+Sans+JP:wght@900&family=Space+Grotesk:wght@700&family=Syncopate:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    
     <style>
         body {
             font-family: 'Black Han Sans', 'Space Grotesk', 'Noto Sans JP', sans-serif;
@@ -54,12 +53,11 @@
 
         .site-header { margin-bottom: 40px; }
 
-        /* 👑 タイトル：clamp()で画面幅に合わせて伸縮し、一行に絶対収まる設定 */
         .site-logo {
             font-size: clamp(1.5rem, 8vw, 4rem);
             font-weight: 900;
             color: #1a1a1a;
-            white-space: nowrap; /* ★ここで一行に強制固定 */
+            white-space: nowrap;
             line-height: 1; 
             text-transform: uppercase;
         }
@@ -105,27 +103,26 @@
         }
         .instagram-btn:hover { transform: translate(4px, 4px); box-shadow: 4px 4px 0px #ff4757; background-color: #ff4757; }
 
-        /* 📍 右下に「公式感」のある文字を表示するスタイル */
         .official-footer-tag {
             position: fixed;
-            bottom: 25px;         /* 画面下からの距離 */
-            right: 30px;          /* 画面右からの距離 */
+            bottom: 25px;         
+            right: 30px;          
             font-family: 'Noto Sans JP', sans-serif;
-            font-size: 0.75rem;   /* あえて小さめにすることで公式感がUP */
-            font-weight: 900;     /* ガツンと太く */
-            letter-spacing: 4px;  /* 文字の間隔を広げてスタイリッシュに */
+            font-size: 0.75rem;   
+            font-weight: 900;     
+            letter-spacing: 4px;  
             color: #1a1a1a;
-            z-index: 100;         /* 一番手前に固定 */
-            background-color: #ffffff; /* 文字の後ろの背景（サメと被っても読めるように） */
-            padding: 4px 8px;     /* 文字の周りの余白 */
-            border: 2px solid #1a1a1a; /* 細めの黒枠で囲ってカッチリ感をプラス */
+            z-index: 100;         
+            background-color: #ffffff; 
+            padding: 4px 8px;     
+            border: 2px solid #1a1a1a; 
             user-select: none;
             pointer-events: none;
         }
 
         @media (max-width: 768px) {
             .official-footer-tag {
-                font-size: 0.65rem; /* スマホでは一回り小さくしてスッキリ */
+                font-size: 0.65rem; 
                 bottom: 15px;
                 right: 15px;
                 letter-spacing: 2px;
@@ -162,4 +159,3 @@
     </div>
 </body>
 </html>
-
