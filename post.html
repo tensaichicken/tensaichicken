@@ -153,6 +153,20 @@
             margin: 0;
         }
 
+        /* 📸 写真エリア用のスタイルを追加 */
+        .post-image-box {
+            margin-top: 15px; /* 文章との間の余白 */
+            width: 100%;
+        }
+
+        .post-img {
+            width: 100%;       /* 文章の横幅にぴったり合わせる */
+            height: auto;      /* 縦横比を崩さない */
+            display: block;    /* 下部に謎の隙間ができるのを防ぐ */
+            border: 2px solid var(--main-color); /* 全体のデザインに合わせた黒枠（不要なら削除OK） */
+            box-sizing: border-box;
+        }
+
         /* 📍 公式感タグ */
         .official-footer-tag {
             position: fixed;
@@ -186,7 +200,6 @@
         </header>
 
         <div class="post-list">
-            <!-- 投稿 1 -->
             <div class="post-item">
                 <div class="post-trigger" onclick="togglePost(this)">
                     <div class="trigger-left">
@@ -206,12 +219,11 @@
                 </div>
             </div>
 
-            <!-- 投稿 2 -->
             <div class="post-item">
                 <div class="post-trigger" onclick="togglePost(this)">
                     <div class="trigger-left">
                         <span class="post-date">2026.06.03</span>
-                        <h2 class="post-title">第１回　近況報告</h2>
+                        <h2 class="post-title">第１回 近況報告</h2>
                     </div>
                     <div class="post-icon"><i class="fa-solid fa-chevron-down"></i></div>
                 </div>
@@ -223,7 +235,7 @@
                             最近あんまり映画見れてなかったけど，これからもっとみたいなって思った．高専の時につらい時期に映画とかアニメに勇気づけられた経験があって，それが今の映画好きになるきっかけになったと思う．中でも覚えている作品が２つあって，NETFLIXの「舞子さんちのまかないさん」，「宇宙よりも遠い場所」がすごい印象に残ってる．
                             １つ目の，舞子～は高専３年生の初日の朝に見たんやけど，これは青木の人生のターニングポイントとなった思い出の作品になってる．
                             僕は高専っていう５年制の高校に行ってたんやけど，４年生になるまで誰一人として友達が出来なくてかなり苦しかった．そんな中で，３年生の新学期が始まる初日は，学校に行くのが嫌すぎて全く寝れへんくて，朝の３時半くらいまで天井を眺めていた記憶がある．いよいよ学校が始まる時間が近づいてきて，行くのは嫌だけど親が悲しむから行かなあかんしって
-                            どうすればいいんやろって．X(当時はTwitterだっけ)で「学校　行きたくない」，って調べて仲間がいないかって探してたら気づいたら４時になってて，どうせ起きてるなら何か見るかってことでネトフリを開いたら出てきたのが「舞子さんちのまかないさん」だった．物語を軽く説明すると，舞子さんになるために田舎から京都に出てきた，キヨとすみれが
+                            どうすればいいんやろって．X(当時はTwitterだっけ)で「学校 行きたくない」，って調べて仲間がいないかって探してたら気づいたら４時になってて，どうせ起きてるなら何か見るかってことでネトフリを開いたら出てきたのが「舞子さんちのまかないさん」だった．物語を軽く説明すると，舞子さんになるために田舎から京都に出てきた，キヨとすみれが
                             日々稽古に励んでいくっていうドラマなんだけど，なんでも器用にこなす，すみれに対し，主人公のキヨは物覚えは悪いしのんびりな性格をしてるから，先生に「あんたは舞子さんにむいてへんのやないか」って言われしまう．
                             ここから先の話は，見てほしいから言わないでおくね．不器用でのんびり屋なキヨが自分の輝ける場所を見つけていくっていう話にとにかく勇気づけられたし，誇張抜きで救われたからこの作品はめっちゃ印象に残ってる（２話まで見て号泣したのち学校にいったよ）．
                             ３話を見たのは半年後，全部見終わったのは２年後くらいやったと思う．なんでそんなに刺さったのにすぐに見てしまわんかったというと，次の１話は辛い日にご褒美として見ようって決めてたからだよ．まかないさんは，今までも今もそしてこれからも，自分を勇気づけてくれるお守りの様な作品だと思う．
@@ -235,12 +247,11 @@
                 </div>
             </div>
 
-            <!-- 投稿 3 -->
             <div class="post-item">
                 <div class="post-trigger" onclick="togglePost(this)">
                     <div class="trigger-left">
                         <span class="post-date">2026.06.05</span>
-                        <h2 class="post-title">第２回　友達募集</h2>
+                        <h2 class="post-title">第２回 友達募集</h2>
                     </div>
                     <div class="post-icon"><i class="fa-solid fa-chevron-down"></i></div>
                 </div>
@@ -256,11 +267,32 @@
                             （最近は，ちゃんと人間してるからたまには，はちみつ入りナンみたいな頭の悪い食べ物食べたくなる）．あと，人と話すのってめっちゃ大事やなって最近思ってる．っていうのも，研究室やバイト先で結構しゃべってるんやけど，
                             まじで気分が明るくなるっていうか中学生の頃の青木に戻ったような感覚になってる．超絶ありがたいことに僕には超が付くほどの大親友がいるねんけど，彼とはここ最近はかなりの頻度で雑談電話してて，それもあって人と話したり
                             関わる事の重要さを実感してる．彼もこのホームページを見てくれてるらしいから恥ずかしいんやけどね．でも，手放しで大親友って呼べる人がいるのは誇れることやと思う（今度タコパしような）．別に寂しくはないけど，タコ焼き器を
-                            買ったはいいんやけどする人がいないんよな．でも，今度やろうぜって彼と話してたから使えそうで良かった．５０年後に僕が死んだとき，遺品整理しててAmazonで買った新品のタコ焼き器が出てきたら一生の恥やからな．死んでるから関係ないか，ガハハ！
+                            買ったはいいんやけどする人がいないんよな．でも，今度やろうぜって彼と話してたから使えそうで良かった．５０年後に僕が死んだとき，遗品整理しててAmazonで買った新品のタコ焼き器が出てきたら一生の恥やからな．死んでるから関係ないか，ガハハ！
                         </p>
                     </div>
                 </div>
             </div>
+
+            <div class="post-item">
+                <div class="post-trigger" onclick="togglePost(this)">
+                    <div class="trigger-left">
+                        <span class="post-date">2026.06.05</span>
+                        <h2 class="post-title">第３回 カレー</h2>
+                    </div>
+                    <div class="post-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                </div>
+                <div class="post-content">
+                    <div class="post-body">
+                        <p class="post-text">
+                          研究室の人たちとカレーを食べに行った．美味しくはなかったが行けてよかった．今日は研究がめっちゃ進んだので良く寝れそう．でも明日はなぜかTOEFLがあるので長くは寝れない．
+                        </p>
+                        <div class="post-image-box">
+                            <img src="カレー.jpg" alt="投稿写真" class="post-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -268,9 +300,19 @@
         function togglePost(element) {
             const postItem = element.parentElement;
             const content = postItem.querySelector('.post-content');
+            
             postItem.classList.toggle('active');
+            
             if (postItem.classList.contains('active')) {
-                content.style.maxHeight = content.scrollHeight + "px";
+              
+                content.style.maxHeight = "none";
+                const fullHeight = content.scrollHeight;
+                content.style.maxHeight = "0px";
+                
+                // 少しだけ時間を置いてアニメーションを適用
+                setTimeout(() => {
+                    content.style.maxHeight = fullHeight + "px";
+                }, 10);
             } else {
                 content.style.maxHeight = "0";
             }
